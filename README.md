@@ -13,16 +13,22 @@ The MNIST dataset contains 60,000 training images and 10,000 testing images. Eac
 
 ## Usage
 
-### Via Command Line
+To use the MNIST dataset in your project:
+
+1. Clone this repository to your local machine.
+2. Import the dataset into your machine learning framework of choice.
+3. Train or evaluate your models using the dataset.
+
+### Download via Command Line
 
 To clone the repository and access the MNIST dataset:
 
 ```bash
-git clone https://github.com/DeepTrackAI/deeplay.git
-cd deeplay
+git clone -b mnist github.com/DeepTrackAI/MNIST_deeplay
+cd MNIST_deeplay
 ```
 
-### Programmatically in Python
+### Download Programmatically in Python
 
 If you want to load the dataset directly into a Python script or Jupyter notebook:
 
@@ -32,7 +38,7 @@ from io import BytesIO
 from zipfile import ZipFile
 
 # URL to the repository (modify this if the dataset is hosted in a specific location or file)
-DATASET_URL = 'https://github.com/DeepTrackAI/deeplay/raw/main/mnist_dataset.zip'
+DATASET_URL = 'https://github.com/DeepTrackAI/MNIST_dataset/raw/main/mnist.zip'
 
 response = requests.get(DATASET_URL)
 with ZipFile(BytesIO(response.content)) as z:
