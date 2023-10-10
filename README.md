@@ -38,14 +38,13 @@ response = requests.get(DATASET_URL)
 with ZipFile(BytesIO(response.content)) as z:
     z.extractall()
 
-# Now you can load the dataset using your preferred library, e.g., TensorFlow, PyTorch, etc.
+# Now you can load the dataset using your preferred library, e.g., deeplay, PyTorch, TensorFlow.
 ```
 
 ## Acknowledgements
 
 - The MNIST dataset was originally created by Yann LeCun, Corinna Cortes, and Christopher Burges. Their efforts have made it one of the benchmark datasets in the machine learning community.
 - [Official MNIST Database Website](http://yann.lecun.com/exdb/mnist/)
-- Special thanks to [OpenAI](https://www.openai.com/) for providing resources and knowledge on the MNIST dataset.
 
 ## License
 
