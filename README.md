@@ -1,61 +1,115 @@
 # MNIST Dataset
 
-Welcome to the GitHub page of DeepTrackAI's MNIST dataset. The MNIST dataset is a large collection of handwritten digits and is widely used for training and evaluating machine learning and deep learning models.
+## Overview
 
-## Description
+This DeepTrackAI repository provides a ready-to-use copy of the **MNIST** dataset, a benchmark collection of handwritten digits originally created by Yann LeCun, Corinna Cortes, and Christopher J.C. Burges. MNIST is widely used for training and evaluating machine learning and deep learning models in computer vision.
 
-The MNIST dataset contains 60,000 training images and 10,000 testing images. Each image is a grayscale picture of a digit, and the associated label is the digit value (from 0 to 9).
+The dataset contains grayscale images of digits (0–9) with associated labels. Each image is 28×28 pixels. The dataset is split into a training set of 60,000 images and a test set of 10,000 images.
 
-- **Dataset Size**: 70,000 images
-- **Image Size**: 28x28 pixels
-- **Color**: Grayscale
-- **Labels**: 10 (0 through 9)
+* **Dataset Size**: 70,000 images (60,000 training + 10,000 test)
+* **Image Size**: 28×28 pixels
+* **Color**: Grayscale
+* **Labels**: 10 classes (digits 0–9)
 
-## Usage
+---
 
-To use the MNIST dataset in your project:
+## Original Source
 
-1. Clone this repository to your local machine.
-2. Import the dataset into your machine learning framework of choice.
-3. Train or evaluate your models using the dataset.
+* **Title:** The MNIST Database of Handwritten Digits
+* **Authors:** [Yann LeCun](http://yann.lecun.com/), [Corinna Cortes](https://cseweb.ucsd.edu/~cortes/), [Christopher J.C. Burges](https://www.microsoft.com/en-us/research/people/cburges/)
+* **Source:** [Official MNIST Website](http://yann.lecun.com/exdb/mnist/)
+* **License:** [Creative Commons Attribution-Share Alike 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
 
-### Download via Command Line
+If you use this dataset in your research, you must follow the licensing requirements and properly attribute the original authors.
 
-To clone the repository and access the MNIST dataset:
+---
 
-```bash
-git clone -b mnist github.com/DeepTrackAI/MNIST_deeplay
-cd MNIST_deeplay
-```
+## Dataset Structure
+
+\`\`\`bash
+/MNIST\_dataset
+├── train/          # Training images by class
+│   ├── 0/
+│   ├── 1/
+│   └── ...
+└── test/           # Test images by class
+├── 0/
+├── 1/
+└── ...
+\`\`\`
+
+Each subfolder contains PNG files corresponding to the digit class.
+Optional CSV manifests may include file paths, labels, and split information.
+
+---
+
+## How to Access the Data
+
+### Clone the Repository
+
+\`\`\`bash
+git clone -b mnist github.com/DeepTrackAI/MNIST\_dataset
+cd MNIST\_dataset
+\`\`\`
 
 ### Download Programmatically in Python
 
-If you want to load the dataset directly into a Python script or Jupyter notebook:
-
-```python
+\`\`\`python
 import requests
 from io import BytesIO
 from zipfile import ZipFile
 
-# URL to the repository (modify this if the dataset is hosted in a specific location or file)
-DATASET_URL = 'https://github.com/DeepTrackAI/MNIST_dataset/raw/main/mnist.zip'
+DATASET\_URL = '[https://github.com/DeepTrackAI/MNIST\_dataset/raw/main/mnist.zip](https://github.com/DeepTrackAI/MNIST_dataset/raw/main/mnist.zip)'
 
-response = requests.get(DATASET_URL)
+response = requests.get(DATASET\_URL)
 with ZipFile(BytesIO(response.content)) as z:
-    z.extractall()
+z.extractall()
 
-# Now you can load the dataset using your preferred library, e.g., deeplay, PyTorch, TensorFlow.
-```
+# Now load with your preferred framework (PyTorch, TensorFlow, deeplay, etc.)
 
-## Acknowledgements
+\`\`\`
 
-- The MNIST dataset was originally created by Yann LeCun, Corinna Cortes, and Christopher Burges. Their efforts have made it one of the benchmark datasets in the machine learning community.
-- [Official MNIST Database Website](http://yann.lecun.com/exdb/mnist/)
+---
+
+## Usage Examples
+
+### PyTorch
+
+\`\`\`python
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+
+transform = transforms.Compose(\[
+transforms.ToTensor(),
+transforms.Normalize((0.1307,), (0.3081,))
+])
+
+train\_set = datasets.ImageFolder("MNIST\_dataset/train", transform=transform)
+train\_loader = DataLoader(train\_set, batch\_size=64, shuffle=True)
+\`\`\`
+
+
+---
+
+## Attribution
+
+When using this dataset, please cite the original MNIST dataset creators:
+
+LeCun Y, Cortes C, Burges CJC. *The MNIST Database of Handwritten Digits.*
+[http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/)
+
+BibTeX:
+\`\`\`bibtex
+@article{lecun1998mnist,
+title={The MNIST database of handwritten digits},
+author={LeCun, Yann and Cortes, Corinna and Burges, Christopher JC},
+journal={[http://yann.lecun.com/exdb/mnist/}](http://yann.lecun.com/exdb/mnist/}),
+year={1998}
+}
+\`\`\`
+
+---
 
 ## License
 
-The MNIST dataset is made available under the terms of the [Creative Commons Attribution-Share Alike 3.0 license](https://creativecommons.org/licenses/by-sa/3.0/).
-
-## Contributing
-
-If you find any issues with the dataset or have suggestions for improvements, please open an issue or submit a pull request.
+This replication dataset is shared under the **Creative Commons Attribution-Share Alike 3.0** License, following the original licensing terms.
