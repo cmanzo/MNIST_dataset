@@ -58,7 +58,7 @@ cd MNIST_dataset
 
 ## Attribution
 
-This replication dataset is based on the original MNIST dataset. When using this replication, please cite both the dataset and the original paper:
+This replication dataset is based on the original MNIST dataset. When using this replication, please cite both the dataset and the original paper.
 
 ### Cite the dataset:
 LeCun Y, Cortes C, Burges CJC. *The MNIST Database of Handwritten Digits.* Retrieved from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/)
