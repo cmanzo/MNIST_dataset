@@ -2,7 +2,7 @@
 
 ## Overview
 
-This DeepTrackAI repository provides a ready-to-use copy of the **MNIST** dataset, a benchmark collection of handwritten digits originally created by Yann LeCun, Corinna Cortes, and Christopher J.C. Burges, available from the [Official MNIST Website](http://yann.lecun.com/exdb/mnist/).
+This DeepTrackAI repository provides a copy of the **MNIST** dataset, a benchmark collection of handwritten digits originally created by Yann LeCun, Corinna Cortes, and Christopher J.C. Burges, available from the [Official MNIST Website](http://yann.lecun.com/exdb/mnist/).
 
 MNIST is one of the most widely used datasets for training and evaluating machine learning and deep learning models in computer vision.
 
