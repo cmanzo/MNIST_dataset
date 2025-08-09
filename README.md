@@ -20,7 +20,7 @@ Each image is a grayscale depiction of a digit from 0 to 9, with an associated l
 ## Original Source
 
 - **Title:** The MNIST Database of Handwritten Digits  
-- **Authors:** [Yann LeCun](http://yann.lecun.com/), [Corinna Cortes](https://cseweb.ucsd.edu/~cortes/), [Christopher J.C. Burges](https://www.microsoft.com/en-us/research/people/cburges/)  
+- **Authors:** Yann LeCun, Corinna Cortes, Christopher J.C. Burges
 - **Source:** [Official MNIST Website](http://yann.lecun.com/exdb/mnist/)  
 - **License:** [Creative Commons Attribution-Share Alike 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
 
